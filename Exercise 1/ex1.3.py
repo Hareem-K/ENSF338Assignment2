@@ -24,7 +24,3 @@ def func(n):
     m = {0: 1, 1: 1}
     return func_memo(n, m)
 
-
-
-
-
