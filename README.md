@@ -74,8 +74,7 @@ return high
 1. Explain what the code does and perform an average-case complexity analysis. Describe the process, not just the result. (2 pts)
 
 2. Test the code on all the inputs at:
-https://raw.githubusercontent.com/ldklab/ensf338w23/main/assignme
-nts/assignment2/ex2.json
+https://raw.githubusercontent.com/ldklab/ensf338w23/main/assignments/assignment2ex2.json
 Plot timing results. Provide your timing/plotting code as ex2.2.py. (2 pts)
 
 3. Compare the timing results with the result of the complexity analysis. Is the result consistent? Why? (2 pts)
