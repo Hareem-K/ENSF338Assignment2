@@ -1,6 +1,7 @@
 # ENSF338Assignment2
 
 ENSF338 W23 – Assignment 2
+
 Due by February 10 2023, end of day (Mountain Time)
 Instructions
 In order to complete this assignment, you must prepare a document in PDF format with the answer to each question. Several questions will also ask you to provide the code you implemented, specifying the name the file must have. You must also prepare these source code files and upload them to a GitHub repository. Once you completed the assignment, you must add a link to your repository prior to the answers. Then, you must upload only the PDF document to the “Assignment 2” D2L drop box for your group. You must do so by the assignment deadline. Finally, you must refrain from updating the files on GitHub after uploading your PDF. Work distribution among team members. Each group member should strive to contribute approximately equally to the solution. When you prepare your answers document, you must create a section called “Work performed by each member” at the beginning of the document. In this section, you must specify clearly (1) what each member contributed to the solution, and (2) a rough estimate of the amount of work (as a
@@ -18,6 +19,7 @@ they will receive 0 points)
 
 
 Exercise 1
+
 In the lab, we have discussed how memoization1 can be used to improve the performance of an
 algorithm.
 
@@ -46,6 +48,7 @@ return func(n-1) + func(n-2)
 
 
 Exercise 2
+
 Look at the following code: 
 
 import sys
@@ -85,6 +88,7 @@ Plot timing results. Provide your timing/plotting code as ex2.2.py. (2 pts)
 
 
 Exercise 3
+
 In the Lecture, we have discussed multiple search algorithms, building up to what is known as the Interpolation Search Interpolation search is a variant/enhancement on the Binary search for multiple reasons, and is implemented usually as:
 
 1. What are some of the key aspects that makes Interpolation search better than Binary search (mention at least 2) (2 pts)
@@ -103,6 +107,7 @@ resolve this issue? (2 pts)
 
 
 Exercise 4
+
 In the lecture recordings, we discussed some of the main differences between arrays (or lists in python) and Linked Lists.
 
 1. Compare advantages and disadvantages of arrays vs linked list (complexity of task
@@ -119,6 +124,7 @@ e. Quick Sort
 
 
 Exercise 5
+
 Stacks and Queues are a special form of linked lists with some modifications that makes operation better. For parts 1 and 2 assume we are using a singly linked list
 
 1. In stacks, insertion (push) adds the newly inserted data at head
