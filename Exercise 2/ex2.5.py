@@ -1,3 +1,11 @@
+'''
+Filename: ex1.5.py
+Course: ENSF 338
+Group Number: 12
+
+This code alters the inputs given in point 2 to improve the performance of the code given in the text of the question.
+'''
+
 import matplotlib.pyplot as plt
 import sys
 import json

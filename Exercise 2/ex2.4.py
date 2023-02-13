@@ -1,3 +1,11 @@
+'''
+Filename: ex1.5.py
+Course: ENSF 338
+Group Number: 12
+
+This code improves its performance on the input given in point 2
+'''
+
 import matplotlib.pyplot as plt
 import sys
 import json
