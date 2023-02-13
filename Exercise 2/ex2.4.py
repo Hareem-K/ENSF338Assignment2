@@ -59,8 +59,6 @@ def optimized_func2(array, start, end):
     return partition_index
 
 
-
-
 with open("ex2.json", "r") as file:
     array = json.load(file)
 
