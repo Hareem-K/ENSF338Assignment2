@@ -37,12 +37,12 @@ with open("ex2.5.json", "r") as file2:
 
 times = []
 for i in array:
-        time = timeit.timeit(lambda: func1(i, 0, 900), number = 1)
+        time = timeit.timeit(lambda: func1(i, 0, len(i) - 1), number = 1)
         times.append(time)
 
 alttimes = []
 for i in altarray:
-        alttime = timeit.timeit(lambda: func1(i, 0, 900), number = 1)
+        alttime = timeit.timeit(lambda: func1(i, 0, len(i) - 1), number = 1)
         alttimes.append(alttime)
 
 length = [len(i) for i in array]
