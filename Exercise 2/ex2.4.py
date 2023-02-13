@@ -34,33 +34,33 @@ def func2(array, start, end):
 def improvedfunc1(arr, low, high):
     if low < high:
         pi = improvedfunc2(arr, low, high)
-        improvedfunc1(arr, low, pi-1)
+        improvedfunc1(arr, low, pi)
         improvedfunc1(arr, pi + 1, high)
 
 def improvedfunc2(array, start, end):
     p = array[(start + end) // 2]
-
-    array[end - 1], array[(start + end) // 2] = array[(start + end) // 2], array[end - 1]
-
-    low = start
-    high = end - 1
+    low = start - 1
+    high = end + 1
     while True:
-        while low <= high and array[high] >= p:
-            high = high - 1
-        while low <= high and array[low] <= p:
+        while True:
             low = low + 1
-        if low <= high:
-            array[low], array[high] = array[high], array[low]
-        else:
+            if array[low] >= p:
+                break
+        while True:
+            high = high - 1
+            if array[high] <= p:
+                break
+        if low >= high:
             break
-    array[end - 1], array[high] = array[high], array[end - 1]
+        array[low], array[high] = array[high], array[low]
     return high
 
 with open("ex2.json", "r") as file:
     array = json.load(file)
 
 times = []
-timesimproved= []
+timesimproved = []
+timesother = []
 
 for i in array:
         time = timeit.timeit(lambda: func1(i, 0, len(i) - 1), number = 1)
