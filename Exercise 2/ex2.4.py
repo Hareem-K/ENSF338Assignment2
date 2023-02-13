@@ -3,6 +3,7 @@ import sys
 import json
 import timeit
 import threading
+import random
 threading.stack_size(33554432)
 
 sys.setrecursionlimit(20000)
@@ -31,29 +32,34 @@ def func2(array, start, end):
     return high
 
 #Improved
-def improvedfunc1(arr, low, high):
-    if low < high:
-        pi = improvedfunc2(arr, low, high)
-        improvedfunc1(arr, low, pi)
-        improvedfunc1(arr, pi + 1, high)
+import random
 
-def improvedfunc2(array, start, end):
-    p = array[(start + end) // 2]
-    low = start - 1
-    high = end + 1
-    while True:
-        while True:
-            low = low + 1
-            if array[low] >= p:
-                break
-        while True:
-            high = high - 1
-            if array[high] <= p:
-                break
-        if low >= high:
-            break
-        array[low], array[high] = array[high], array[low]
-    return high
+def optimized_func1(arr, low, high):
+    while low < high:
+        pivot = optimized_func2(arr, low, high)
+        if pivot - low < high - pivot:
+            optimized_func1(arr, low, pivot - 1)
+            low = pivot + 1
+        else:
+            optimized_func1(arr, pivot + 1, high)
+            high = pivot - 1
+
+def optimized_func2(array, start, end):
+    pivot_index = random.randint(start, end)
+    pivot = array[pivot_index]
+    array[pivot_index], array[end] = array[end], array[pivot_index]
+    partition_index = start
+    i = start
+    while i < end:
+        if array[i] <= pivot:
+            array[i], array[partition_index] = array[partition_index], array[i]
+            partition_index += 1
+        i += 1
+    array[end], array[partition_index] = array[partition_index], array[end]
+    return partition_index
+
+
+
 
 with open("ex2.json", "r") as file:
     array = json.load(file)
@@ -67,7 +73,7 @@ for i in array:
         times.append(time)
 
 for i in array:
-        time2 = timeit.timeit(lambda: improvedfunc1(i, 0, len(i) - 1), number = 1)
+        time2 = timeit.timeit(lambda: optimized_func1(i, 0, len(i) - 1), number = 1)
         timesimproved.append(time2)
 
 length = [len(i) for i in array]
