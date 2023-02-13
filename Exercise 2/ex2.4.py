@@ -3,7 +3,6 @@ import sys
 import json
 import timeit
 import threading
-import random
 threading.stack_size(33554432)
 
 sys.setrecursionlimit(20000)
@@ -45,7 +44,7 @@ def optimized_func1(arr, low, high):
             high = pivot - 1
 
 def optimized_func2(array, start, end):
-    pivot_index = random.randint(start, end)
+    pivot_index = (start + end) // 2
     pivot = array[pivot_index]
     array[pivot_index], array[end] = array[end], array[pivot_index]
     partition_index = start
@@ -59,12 +58,12 @@ def optimized_func2(array, start, end):
     return partition_index
 
 
+
 with open("ex2.json", "r") as file:
     array = json.load(file)
 
 times = []
 timesimproved = []
-timesother = []
 
 for i in array:
         time = timeit.timeit(lambda: func1(i, 0, len(i) - 1), number = 1)
